@@ -1,5 +1,7 @@
 package com.leticia.estruturadados.vetor;
 
+import java.util.Arrays;
+
 public class Vetor {
 	
 	private String[] elementos;
@@ -39,4 +41,26 @@ public class Vetor {
 		}
 	}*/
 	
+	public int tamanho() {
+		return this.tamanho;
+	}
+	
+	@Override
+	public String toString() {
+		
+		String s = "[";
+		
+		for (int i=0; i<this.tamanho-1; i++) {
+			s += this.elementos[i];
+			s += ", ";
+		}
+		
+		if(this.tamanho>0) {
+			s += this.elementos[this.tamanho-1];
+		}
+		
+		s += "]";
+		
+		return Arrays.toString(elementos);
+	}
 }
