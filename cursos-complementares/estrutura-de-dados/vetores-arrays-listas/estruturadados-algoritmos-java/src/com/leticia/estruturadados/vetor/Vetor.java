@@ -22,12 +22,11 @@ public class Vetor {
 	}*/
 	
 	public boolean adiciona(String elemento) {
-		
-		if (this.tamanho < this.elementos.length) {
+		if (this.tamanho < this.elementos.length){
 			this.elementos[this.tamanho] = elemento;
 			this.tamanho++;
 			return true;
-		}
+		} 
 		return false;
 	}
 	
@@ -48,19 +47,20 @@ public class Vetor {
 	@Override
 	public String toString() {
 		
-		String s = "[";
+		StringBuilder s = new StringBuilder();
+		s.append("[");
 		
-		for (int i=0; i<this.tamanho-1; i++) {
-			s += this.elementos[i];
-			s += ", ";
+		for (int i=0; i<this.tamanho-1; i++){
+			s.append(this.elementos[i]);
+			s.append(", ");
 		}
 		
-		if(this.tamanho>0) {
-			s += this.elementos[this.tamanho-1];
+		if (this.tamanho>0){
+			s.append(this.elementos[this.tamanho-1]);
 		}
 		
-		s += "]";
+		s.append("]");
 		
-		return Arrays.toString(elementos);
+		return s.toString();
 	}
 }
